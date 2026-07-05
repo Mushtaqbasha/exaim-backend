@@ -36,7 +36,7 @@ function StudentDashboard() {
     }
     const fetchResults = async () => {
       try {
-        const res = await axios.get(`http://localhost:8000/api/student/results/${rollNumber}`);
+        const res = await axios.get(`https://examai-bw1i.onrender.com/api/student/results/${rollNumber}`);
         setResults(res.data);
       } catch (error) {
         console.error("Could not fetch student results", error);
