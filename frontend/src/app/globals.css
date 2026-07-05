@@ -1,0 +1,36 @@
+@import "tailwindcss";
+@tailwind utilities;
+
+:root {
+  --mouse-x: 50vw;
+  --mouse-y: 50vh;
+}
+
+body {
+  background-color: #020617;
+  overflow-x: hidden;
+  cursor: none !important;
+}
+
+/* The Hyper-Optimized GPU Glow */
+.bg-glow {
+  position: fixed;
+  top: -400px;  /* Offset by half the size so the mouse is exactly in the middle */
+  left: -400px;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.12) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+
+  /* These two lines are the magic lag-killers */
+  will-change: transform;
+  transform: translate3d(var(--mouse-x), var(--mouse-y), 0);
+}
+
+body {
+  background-color: #020617;
+  overflow-x: hidden;
+  cursor: none !important;
+}
