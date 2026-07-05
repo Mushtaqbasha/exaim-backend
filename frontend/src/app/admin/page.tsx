@@ -66,7 +66,7 @@ export default function AdminPage() {
 
     const fetchHistory = async () => {
       try {
-        const res = await axios.get("http://localhost:8000/api/history");
+        const res = await axios.get("https://examai-bw1i.onrender.com/api/history");
         setGradedAnswers(res.data);
       } catch (error) {
         console.error("Could not load history", error);
@@ -121,7 +121,7 @@ export default function AdminPage() {
       formData.append("student_answer", currentFile);
 
       try {
-        const res = await axios.post("http://localhost:8000/api/grade", formData);
+        const res = await axios.post("https://examai-bw1i.onrender.coms/api/grade", formData);
         setGradedAnswers(prev => [{
           id: res.data.id,
           rollNumber: extractedRollNumber,
@@ -144,7 +144,7 @@ export default function AdminPage() {
     if (!isConfirmed) return;
 
     try {
-      await axios.delete(`http://localhost:8000/api/evaluation/${id}`);
+      await axios.delete(`https://examai-bw1i.onrender.com/api/evaluation/${id}`);
       setGradedAnswers(prev => prev.filter(ans => ans.id !== id));
     } catch (error) {
       console.error("Failed to delete evaluation", error);
