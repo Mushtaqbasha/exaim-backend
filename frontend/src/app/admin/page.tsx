@@ -121,7 +121,7 @@ export default function AdminPage() {
       formData.append("student_answer", currentFile);
 
       try {
-        const res = await axios.post("https://examai-bw1i.onrender.coms/api/grade", formData);
+        const res = await axios.post("https://examai-bw1i.onrender.com/api/grade", formData);
         setGradedAnswers(prev => [{
           id: res.data.id,
           rollNumber: extractedRollNumber,
